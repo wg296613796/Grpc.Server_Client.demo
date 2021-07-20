@@ -1,10 +1,5 @@
 # gRPC
 
-#### 介绍
-gRPC代码
-
-# gRPC
-
 #### Description
 gRPC代码
 
