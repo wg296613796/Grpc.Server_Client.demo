@@ -41,7 +41,7 @@ namespace WinFormsGrpc.Client.Demo
                 UserName = txt_condition.Text.Trim()
             });
             //3、处理响应结果，将其显示在文本框中
-            this.txt_result.Text = $"姓名：{resp.Student.UserName}，年龄：{resp.Student.Age}，地址：{resp.Student.Addr}";
+            this.txt_result.Text = $"姓名：{resp?.Student?.UserName}，年龄：{resp?.Student?.Age}，地址：{resp?.Student?.Addr}";
         }
         #endregion
 
@@ -65,7 +65,7 @@ namespace WinFormsGrpc.Client.Demo
                 var student = respStreaming.Current.Student;
                 this.txt_result.Text += $"姓名：{student.UserName}，年龄：{student.Age}，地址：{student.Addr}\r\n";
             }
-        } 
+        }
         #endregion
 
         private async void btn_client_Click(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace WinFormsGrpc.Client.Demo
             {
                 filePath = this.openFileDialog1.FileName;
             }
-            if(string.IsNullOrEmpty(filePath))
+            if (string.IsNullOrEmpty(filePath))
             {
                 this.txt_result.Text = "请选择文件";
                 return;
@@ -91,13 +91,13 @@ namespace WinFormsGrpc.Client.Demo
             using var call = grpcClient.UploadImg();
             var clientStream = call.RequestStream;
             //4、循环发送，指定发送完文件
-            while(true)
+            while (true)
             {
                 // 一次最多发送1024字节
                 byte[] buffer = new byte[1024];
                 int nRead = await fileStream.ReadAsync(buffer, 0, buffer.Length);
                 // 直到读不到数据为止，即文件已经发送完成，即退出发送
-                if(nRead==0)
+                if (nRead == 0)
                 {
                     break;
                 }
@@ -116,7 +116,7 @@ namespace WinFormsGrpc.Client.Demo
             //用于多线程通知
             CancellationTokenSource cts = new CancellationTokenSource();
             //模拟通过请求流方式保存多个Student，同时通过响应流的方式返回存储结果
-            List<Student> students = new List<Student> { 
+            List<Student> students = new List<Student> {
                 new Student{ UserName="Code综艺圈1", Age=20, Addr="关注我一块学" },
                 new Student{ UserName="综艺圈好酷", Age=18, Addr="关注Code综艺圈和我一块学" }
             };
@@ -128,8 +128,9 @@ namespace WinFormsGrpc.Client.Demo
             var requestStream = call.RequestStream;
             var responseStream = call.ResponseStream;
             //3、开启一个线程专门用来接收响应流
-            var taskResp = Task.Run(async()=> { 
-                while(await responseStream.MoveNext(cts.Token))
+            var taskResp = Task.Run(async () =>
+            {
+                while (await responseStream.MoveNext(cts.Token))
                 {
                     var student = responseStream.Current.Student;
                     // 将接收到结果在文本框中显示 ，多线程更新UI简单处理一下：Control.CheckForIllegalCrossThreadCalls = false;
@@ -142,7 +143,7 @@ namespace WinFormsGrpc.Client.Demo
                 // 每次发送一个学生请求
                 await requestStream.WriteAsync(new AddStudentRequest
                 {
-                     Student = student
+                    Student = student
                 });
             }
             //5、传送完毕
@@ -156,9 +157,10 @@ namespace WinFormsGrpc.Client.Demo
             using var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var grpcClient = new StudentService.StudentServiceClient(channel);
             //2、发起请求
-            var resp = await grpcClient.GetTokenAsync(new TokenRequest { 
-                 UserName= "Code综艺圈",
-                 UserPwd= "admin123"
+            var resp = await grpcClient.GetTokenAsync(new TokenRequest
+            {
+                UserName = "Code综艺圈",
+                UserPwd = "admin123"
             });
             return resp.Token;
         }
@@ -180,7 +182,7 @@ namespace WinFormsGrpc.Client.Demo
             };
 
             //2、客户端一次请求，多次返回
-            using var respStreamingCall = grpcClient.GetAllStudent(new QueryAllStudentRequest(),headers);
+            using var respStreamingCall = grpcClient.GetAllStudent(new QueryAllStudentRequest(), headers);
             //3、获取响应流
             var respStreaming = respStreamingCall.ResponseStream;
             //4、循环读取响应流，直到读完为止
@@ -191,5 +193,7 @@ namespace WinFormsGrpc.Client.Demo
                 this.txt_result.Text += $"姓名：{student.UserName}，年龄：{student.Age}，地址：{student.Addr}\r\n";
             }
         }
+
+
     }
 }

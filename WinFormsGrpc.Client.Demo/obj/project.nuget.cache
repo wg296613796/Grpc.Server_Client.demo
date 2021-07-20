@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "JPdV2Yh2FhhYWw8Qx1/uAraABE+2sv7fEGYdqA+C4D7BxhEDs3mJfXY+S6m4/QCaFmEcIFvrt1eQyhhQZQ9akg==",
+  "success": true,
+  "projectFilePath": "H:\\github\\g-rpc\\WinFormsGrpc.Client.Demo\\WinFormsGrpc.Client.Demo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\wg\\.nuget\\packages\\google.protobuf\\3.17.3\\google.protobuf.3.17.3.nupkg.sha512",
+    "C:\\Users\\wg\\.nuget\\packages\\grpc.core.api\\2.37.0\\grpc.core.api.2.37.0.nupkg.sha512",
+    "C:\\Users\\wg\\.nuget\\packages\\grpc.net.client\\2.38.0\\grpc.net.client.2.38.0.nupkg.sha512",
+    "C:\\Users\\wg\\.nuget\\packages\\grpc.net.common\\2.38.0\\grpc.net.common.2.38.0.nupkg.sha512",
+    "C:\\Users\\wg\\.nuget\\packages\\grpc.tools\\2.38.1\\grpc.tools.2.38.1.nupkg.sha512",
+    "C:\\Users\\wg\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
+    "C:\\Users\\wg\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.5.1\\system.diagnostics.diagnosticsource.4.5.1.nupkg.sha512",
+    "C:\\Users\\wg\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\wg\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}

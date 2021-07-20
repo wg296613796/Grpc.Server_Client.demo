@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Grpc.Server.Demo.Services
 {
     //[Authorize]
-    [Authorize(Policy = "Permission")]
+    //[Authorize(Policy = "Permission")]
     public class StudentDemoService: StudentService.StudentServiceBase
     {
         private PermissionRequirement _permissionRequirement;

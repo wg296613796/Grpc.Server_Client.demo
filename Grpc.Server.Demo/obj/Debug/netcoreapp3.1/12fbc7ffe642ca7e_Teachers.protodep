@@ -1,0 +1,2 @@
+obj\Debug\netcoreapp3.1\Protos/Teachers.cs \
+obj\Debug\netcoreapp3.1\Protos/TeachersGrpc.cs: Protos/Teachers.proto

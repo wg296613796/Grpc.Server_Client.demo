@@ -91,6 +91,8 @@ namespace Grpc.Server.Demo
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<StudentDemoService>();
+                endpoints.MapGrpcService<GreeterService>();
+                endpoints.MapGrpcService<TeacherInfoService>();
 
                 endpoints.MapGet("/", async context =>
                 {

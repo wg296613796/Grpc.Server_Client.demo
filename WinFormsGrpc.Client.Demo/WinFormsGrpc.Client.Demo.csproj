@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>annotations</Nullable>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -12,6 +13,7 @@
 
   <ItemGroup>
     <None Remove="Protos\student.proto" />
+    <None Remove="Protos\Teachers.proto" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +27,9 @@
 
   <ItemGroup>
     <Protobuf Include="Protos\student.proto">
+      <GrpcServices>Client</GrpcServices>
+    </Protobuf>
+    <Protobuf Include="Protos\Teachers.proto">
       <GrpcServices>Client</GrpcServices>
     </Protobuf>
   </ItemGroup>

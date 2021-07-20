@@ -1,0 +1,85 @@
+{
+  "format": 1,
+  "restore": {
+    "H:\\github\\g-rpc\\WinFormsGrpc.Client.Demo\\WinFormsGrpc.Client.Demo.csproj": {}
+  },
+  "projects": {
+    "H:\\github\\g-rpc\\WinFormsGrpc.Client.Demo\\WinFormsGrpc.Client.Demo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\github\\g-rpc\\WinFormsGrpc.Client.Demo\\WinFormsGrpc.Client.Demo.csproj",
+        "projectName": "WinFormsGrpc.Client.Demo",
+        "projectPath": "H:\\github\\g-rpc\\WinFormsGrpc.Client.Demo\\WinFormsGrpc.Client.Demo.csproj",
+        "packagesPath": "C:\\Users\\wg\\.nuget\\packages\\",
+        "outputPath": "H:\\github\\g-rpc\\WinFormsGrpc.Client.Demo\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.apukj.com/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.17.3, )"
+            },
+            "Grpc.Net.Client": {
+              "target": "Package",
+              "version": "[2.38.0, )"
+            },
+            "Grpc.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.38.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
